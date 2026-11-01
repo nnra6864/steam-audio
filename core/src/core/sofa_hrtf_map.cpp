@@ -64,7 +64,7 @@ SOFAHRTFMap::SOFAHRTFMap(const HRTFSettings& hrtfSettings,
         {
             gLog().message(MessageSeverity::Error,
                            "SOFA file %s contains non-zero values for Data.Delay; this is not currently supported.",
-                           hrtfSettings.sofaFileName);
+                           hrtfSettings.sofaFileName ? hrtfSettings.sofaFileName : "(from memory)");
 
             throw Exception(Status::Failure);
         }
