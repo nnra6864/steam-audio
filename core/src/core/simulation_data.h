@@ -73,7 +73,7 @@ struct ReflectionSimulationState
     bool applyDistanceAttenuationCorrectionCurve;
     unique_ptr<ImpulseResponse> impulseResponse;
     unique_ptr<ImpulseResponse> impulseResponseCopy;
-    std::atomic<bool> impulseResponseUpdated;
+    std::atomic<bool> impulseResponseUpdated{false};
     bool validSimulationData;
 };
 
