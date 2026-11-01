@@ -145,7 +145,8 @@ public:
     // Clears all elements to zero.
     void zero()
     {
-        memset(flatData(), 0, totalSize() * sizeof(T));
+        if (totalSize() > 0)
+            memset(flatData(), 0, totalSize() * sizeof(T));
     }
 
     void swap(Array<T, N>& other)
@@ -232,7 +233,8 @@ public:
 
     void zero()
     {
-        memset(flatData(), 0, totalSize() * sizeof(T));
+        if (totalSize() > 0)
+            memset(flatData(), 0, totalSize() * sizeof(T));
     }
 
     void swap(Array<T, 1>& other)
