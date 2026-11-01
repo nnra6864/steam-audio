@@ -17,7 +17,7 @@
 #pragma once
 
 #if defined(IPL_OS_WINDOWS)
-#include <Windows.h>
+#include <windows.h>
 #else
 #if defined(IPL_OS_MACOSX)
 #include <mach-o/dyld.h>

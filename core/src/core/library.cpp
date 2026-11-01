@@ -27,7 +27,7 @@
 
 #include "error.h"
 
-#if defined(IPL_OS_WINDOWS)
+#if defined(_MSC_VER)
 decltype(__pfnDliNotifyHook2) __pfnDliNotifyHook2 = delayLoadHook;
 decltype(__pfnDliFailureHook2) __pfnDliFailureHook2 = delayLoadHook;
 #endif
@@ -175,7 +175,7 @@ void Library::unload(HMODULE library)
 void* Library::getFunction(HMODULE library,
                            const char* name)
 {
-    return GetProcAddress(library, name);
+    return reinterpret_cast<void*>(GetProcAddress(library, name));
 }
 #else
 void* Library::load(const char* name)
@@ -200,7 +200,7 @@ void* Library::getFunction(void* library,
 
 }
 
-#if defined(IPL_OS_WINDOWS)
+#if defined(_MSC_VER)
 extern "C" FARPROC WINAPI delayLoadHook(unsigned int notify,
                                         DelayLoadInfo* dli)
 {

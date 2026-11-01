@@ -41,7 +41,7 @@ namespace float4
 
 }
 
-#if defined(IPL_OS_WINDOWS)
+#if defined(_MSC_VER)
 
 namespace ipl {
 

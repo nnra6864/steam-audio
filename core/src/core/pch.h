@@ -72,8 +72,10 @@
 #ifdef __cplusplus
 #include <codecvt>
 #endif
-#include <Windows.h>
+#include <windows.h>
+#if defined(_MSC_VER)
 #include <delayimp.h>
+#endif
 #endif
 
 #if defined(IPL_OS_MACOSX)

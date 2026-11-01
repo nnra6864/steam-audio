@@ -18,7 +18,7 @@
 
 #include "opencl_device.h"
 
-#include <Windows.h>
+#include <windows.h>
 
 #if defined(IPL_USES_TRUEAUDIONEXT)
 #include <public/include/core/Factory.h>

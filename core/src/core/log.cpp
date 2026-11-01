@@ -22,7 +22,7 @@
 #include <cstring>
 
 #if defined(IPL_OS_WINDOWS)
-#include <Windows.h>
+#include <windows.h>
 #endif
 
 #if defined(IPL_OS_ANDROID)
